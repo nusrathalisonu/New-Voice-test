@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlphaVoice - Text-to-Speech</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AlphaVoice</h1>
+      <p>Enter your text and listen to a commanding voice.</p>
+    </header>
+    
+    <section>
+      <textarea id="text-input" placeholder="Enter your text here..."></textarea>
+      <div class="controls">
+        <button id="generate-button">Generate Audio</button>
+        <input type="text" id="audio-title" placeholder="Enter audio title" />
+      </div>
+    </section>
+    
+    <div id="audio-player" class="audio-player">
+      <h2 id="audio-title-display"></h2>
+      <audio id="audio" controls></audio>
+      <div class="audio-controls">
+        <button id="play-button">Play</button>
+        <button id="pause-button" disabled>Pause</button>
+        <input type="range" id="volume-control" value="100" max="100" />
+        <button id="download-button">Download</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
