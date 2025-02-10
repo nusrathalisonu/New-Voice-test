@@ -18,33 +18,8 @@ document.getElementById('generate-button').addEventListener('click', async () =>
   const data = await response.json();
   if (data.audioUrl) {
     document.getElementById('audio-title-display').innerText = title || 'Generated Audio';
-    document.getElementById('audio').src = data.audioUrl;
+    document.getElementById('audio').src = data.audioUrl;  // Ensure the src is updated correctly
     document.getElementById('audio-player').style.display = 'block';
     document.getElementById('play-button').disabled = false;
   }
-});
-
-document.getElementById('play-button').addEventListener('click', () => {
-  const audio = document.getElementById('audio');
-  audio.play();
-  document.getElementById('pause-button').disabled = false;
-});
-
-document.getElementById('pause-button').addEventListener('click', () => {
-  const audio = document.getElementById('audio');
-  audio.pause();
-  document.getElementById('pause-button').disabled = true;
-});
-
-document.getElementById('volume-control').addEventListener('input', (event) => {
-  const audio = document.getElementById('audio');
-  audio.volume = event.target.value / 100;
-});
-
-document.getElementById('download-button').addEventListener('click', () => {
-  const audio = document.getElementById('audio');
-  const link = document.createElement('a');
-  link.href = audio.src;
-  link.download = 'generated-audio.mp3';
-  link.click();
 });
